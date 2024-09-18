@@ -4,3 +4,5 @@ access_jenis_tinggal,access_jenis_tinggal,model_jenis_tinggal,,1,1,1,1
 access_tinggal_student,access_tinggal_student,model_tinggal_student,,1,1,1,1
 access_open_jurusan,access_open_jurusan,model_open_jurusan,,1,1,1,1
 access_fits_student,access_fits_student,model_fits_student,,1,1,1,1
+access_open_pengalaman,access_open_pengalaman,model_open_pengalaman,,1,1,1,1
+access_open_jenis_pengalaman,access_open_jenis_pengalaman,model_open_jenis_pengalaman,,1,1,1,1

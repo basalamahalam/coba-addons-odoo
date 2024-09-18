@@ -38,6 +38,14 @@
                         </tree>
                       </field>
                   </page>
+                  <page string="Pengalaman Mahasiswa">
+                    <field name="pengalaman_ids" nolabel="1">
+                      <tree editable="bottom">
+                        <field name="jenis_pengalaman_id"/>
+                        <field name="tahun"/>
+                      </tree>
+                    </field>
+                  </page>
                 </notebook>
               </sheet>
             </form>
@@ -127,6 +135,25 @@
       <field name="res_model">open.jurusan</field>
       <field name="view_mode">tree,form</field>
     </record>
+
+    <record id="view_open_pengalaman_tree" model="ir.ui.view">
+      <field name="name">open.jenis.pengalaman.tree</field>
+      <field name="model">open.jenis.pengalaman</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_pengalaman">
+      <field name="name">Jurusan</field>
+      <field name="res_model">open.jenis.pengalaman</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
 
     <!-- <menuitem id="menu_jurusan" name="Jurusan" parent="openeducat_core.menu_op_general_student" action="action jurusan" sequence="21"/> -->
     <!-- menu item -->

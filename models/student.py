@@ -13,6 +13,7 @@ class OpenStudent(models.Model):
     jurusan_id      = fields.Many2one('open.jurusan', string="Jurusan SMA")
     pendidikan_ids  = fields.One2many('history.pendidikan', 'student_id', string="History Pendidikan")
     tinggal_student_ids = fields.One2many('tinggal.student', 'student_id', string="Tempat Tinggal Student")
+    pengalaman_ids  = fields.One2many('open.pengalaman', 'student_id', string="Pengalaman Mahasiswa")
 
 class OpenHistoryPendidikan(models.Model):
     _name = 'history.pendidikan'
@@ -44,3 +45,17 @@ class OpenJurusan(models.Model):
     _description = "Jurusan"
 
     name            = fields.Char(string="Nama Jurusan")
+
+class OpenPengalaman(models.Model):
+    _name = 'open.pengalaman'
+    _description = "Pengalaman Mahasiswa"
+
+    student_id          = fields.Many2one('fits.student', string="Student")
+    jenis_pengalaman_id = fields.Many2one('open.jenis.pengalaman', string="Jenis Pengalaman")
+    tahun               = fields.Selection([('2019', '2019'), ('2020', '2020'), ('2021', '2021'),('2022', '2022'), ('2023', '2023'), ('2024', '2024')], string="Tahun")
+
+class OpenJenisPengalaman(models.Model):
+    _name = 'open.jenis.pengalaman'
+
+    name    = fields.Char(string="Nama Pengalaman / Prestasi")
+    keterangan = fields.Text(string="Keterangan")
