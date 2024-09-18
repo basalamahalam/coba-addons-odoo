@@ -2,4 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_history_pendidikan,access_history_pendidikan,model_history_pendidikan,,1,1,1,1
 access_jenis_tinggal,access_jenis_tinggal,model_jenis_tinggal,,1,1,1,1
 access_tinggal_student,access_tinggal_student,model_tinggal_student,,1,1,1,1
+access_open_jurusan,access_open_jurusan,model_open_jurusan,,1,1,1,1
 access_fits_student,access_fits_student,model_fits_student,,1,1,1,1

@@ -12,13 +12,13 @@ class OpenStudent(models.Model):
     agama           = fields.Selection([('islam', 'Islam'),('kristen', 'Kristen'),('katolik', 'Katolik'),('hindu', 'Hindu'),('budha', 'Budha'),('konghucu', 'Konghucu')], string="Agama")
     jurusan_id      = fields.Many2one('open.jurusan', string="Jurusan SMA")
     pendidikan_ids  = fields.One2many('history.pendidikan', 'student_id', string="History Pendidikan")
-    tinggal_student_ids = fields.One2many('tinggal.student', 'student_id', string="Tempat Tinggal")
+    tinggal_student_ids = fields.One2many('tinggal.student', 'student_id', string="Tempat Tinggal Student")
 
 class OpenHistoryPendidikan(models.Model):
     _name = 'history.pendidikan'
     _description = "History Pendidikan"
 
-    student_id = fields.Many2one('op.student', string="Student")
+    student_id = fields.Many2one('fits.student', string="Student")
     name       = fields.Char(string="Nama Sekolah")
     alamat     = fields.Char(string="Alamat Sekolah")
     keterangan = fields.Char(string="Keterangan")
@@ -33,14 +33,14 @@ class OpenJenisTinggal(models.Model):
 
 class OpenTinggalStudent(models.Model):
     _name = 'tinggal.student'
-    _rec_name = 'jenis_tinggal_id'
+    _rec_name = "jenis_tinggal_id"
 
-    student_id          = fields.Many2one('op.student', string="Student")
+    student_id          = fields.Many2one('fits.student', string="Student")
     jenis_tinggal_id    = fields.Many2one('jenis.tinggal', string="Jenis Tinggal")
-    alamat              = fields.Char(string="Nama Sekolah")
+    alamat              = fields.Char(string="Alamat")
 
 class OpenJurusan(models.Model):
     _name = 'open.jurusan'
-    _description = "Jenis Tempat Tinggal"
+    _description = "Jurusan"
 
     name            = fields.Char(string="Nama Jurusan")

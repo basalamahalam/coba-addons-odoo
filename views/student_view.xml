@@ -22,25 +22,21 @@
                 </group>
                 <notebook>
                   <page string="History Pendidikan">
-                    <group string="Histori Pendidikan">
-                      <field name="pendidikan_ids" nolabel="1">
-                        <tree editable="botton">
+                      <field name="pendidikan_ids" nolabel="1" >
+                        <tree editable="bottom">
                             <field name="name"/>
                             <field name="alamat"/>
                             <field name="keterangan"/>
                         </tree>
                       </field>
-                    </group>
                   </page>
                   <page string="Tempat Tinggal Mahasiswa">
-                    <group string="Tempat Tinggal Mahasiswa">
                       <field name="tinggal_student_ids" nolabel="1">
-                        <tree editable="button">
+                        <tree editable="bottom">
                           <field name="jenis_tinggal_id"/>
                           <field name="alamat"/>
                         </tree>
                       </field>
-                    </group>
                   </page>
                 </notebook>
               </sheet>
