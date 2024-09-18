@@ -1,0 +1,111 @@
+<odoo>
+    <data>
+      <record id="open_dosen_form" model="ir.ui.view">
+        <field name="name">open.dosen.tree</field>
+        <field name="model">open.dosen</field>
+        <field name="arch" type="xml">
+            <form string="Biodata Dosen">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="photo_filename" widget="image" options="{'preview_image': 'photo'}"/>
+                            <field name="name"/>
+                            <field name="nip"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="address"/>
+                            <field name="bidangkeahlian_id"/>
+                            <field name="jabatan"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Mata Kuliah Diajar">
+                            <field name="matakuliah_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="sks"/>
+                                    <field name="active"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_open_dosen_tree" model="ir.ui.view">
+        <field name="name">open.dosen.tree</field>
+        <field name="model">open.dosen</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="photo_filename" widget="image" options="{'preview_image': 'photo'}"/>
+                <field name="name"/>
+                <field name="nip"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="address"/>
+                <field name="bidangkeahlian_id"/>
+                <field name="jabatan"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_open_dosen">
+        <field name="name">Data Dosen</field>
+        <field name="res_model">open.dosen</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_open_dosen_calendar">
+        <field name="name">Calendar Dosen</field>
+        <field name="res_model">open.dosen</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+
+    <menuitem id="menu_dosen" name="Dosen" parent="main_student_menu" sequence="1"/>
+    <!-- <menuitem id="menu_dosen_calendar" name="Calendar Dosen" parent="main_student_menu" action="action_open_dosen_calendar" sequence="1"/> -->
+
+    <!-- nambah button sub dibawah -->
+    <menuitem id="submenu_dosen" name="Data Dosen" parent="menu_dosen" sequence="1" action="action_open_dosen"/>  
+    <menuitem id="submenu_dosen_calendar" name="Calendar Dosen" parent="menu_dosen" sequence="2" action="action_open_dosen_calendar"/>  
+
+    <record id="view_bidangkeahlian_tree" model="ir.ui.view">
+        <field name="name">open.bidangkeahlian.tree</field>
+        <field name="model">open.bidangkeahlian</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_bidangkeahlian">
+        <field name="name">Bidang</field>
+        <field name="res_model">open.bidangkeahlian</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_matakuliah_tree" model="ir.ui.view">
+        <field name="name">open.matakuliah.biodata.tree</field>
+        <field name="model">open.matakuliah</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="sks"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_matakuliah">
+        <field name="name">Nama Mata Kuliah</field>
+        <field name="res_model">open.matakuliah</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+  </data>
+</odoo>

@@ -6,3 +6,6 @@ access_open_jurusan,access_open_jurusan,model_open_jurusan,,1,1,1,1
 access_fits_student,access_fits_student,model_fits_student,,1,1,1,1
 access_open_pengalaman,access_open_pengalaman,model_open_pengalaman,,1,1,1,1
 access_open_jenis_pengalaman,access_open_jenis_pengalaman,model_open_jenis_pengalaman,,1,1,1,1
+access_open_dosen,access_open_dosen,model_open_dosen,,1,1,1,1
+access_open_bidangkeahlian,access_open_bidangkeahlian,model_open_bidangkeahlian,,1,1,1,1
+access_open_matakuliah,access_open_matakuliah,model_open_matakuliah,,1,1,1,1

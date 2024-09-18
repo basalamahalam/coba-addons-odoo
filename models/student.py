@@ -14,6 +14,7 @@ class OpenStudent(models.Model):
     pendidikan_ids  = fields.One2many('history.pendidikan', 'student_id', string="History Pendidikan")
     tinggal_student_ids = fields.One2many('tinggal.student', 'student_id', string="Tempat Tinggal Student")
     pengalaman_ids  = fields.One2many('open.pengalaman', 'student_id', string="Pengalaman Mahasiswa")
+    matakuliah_id   = fields.Many2one('open.matakuliah', string="Mata Kuliah")
 
 class OpenHistoryPendidikan(models.Model):
     _name = 'history.pendidikan'
